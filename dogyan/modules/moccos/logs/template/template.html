@@ -1,0 +1,41 @@
+<style type="text/css">
+<!--
+table.moccosLog {
+	width: 100%;
+}
+table.moccosLog th.lap, table.moccosLog td.lap {
+	width: 100px;
+}
+table.moccosLog th.class, table.moccosLog td.class {
+	width: 150px;
+}
+table.moccosLog th.function, table.moccosLog td.function {
+	width: 150px;
+}
+table.moccosLog th.line, table.moccosLog td.line {
+	width: 50px;
+}
+table.moccosLog td {
+	border: 1px solid #fff;
+	background-color: #eee;
+}
+-->
+</style>
+<table class="moccosLog">
+	<tr>
+		<th class="lap">lap</th>
+		<th class="class">class</th>
+		<th class="function">function</th>
+		<th class="line">line</th>
+		<th>content</th>
+	</tr>
+<?php foreach ($this->_logs as $record) :?>
+	<tr>
+		<td class="lap"><?= $record->lap ?></td>
+		<td class="class"><?= $record->class ?></td>
+		<td class="function"><?= $record->function ?></td>
+		<td class="line"><?= $record->line ?></td>
+		<td><pre><?= $record->content ?></pre></td>
+	</tr>
+<?php endforeach; ?>
+</table>
